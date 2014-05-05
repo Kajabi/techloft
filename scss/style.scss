@@ -28,11 +28,23 @@
 // Variables
 //
 ////////////////////////////////////////////////*/
+
+// Sam's Colors
+$bitchin-blue:            #1699E3;
+$dude-dark-blue:          #2E3840;
+$gnarly-green:            #7FB22E;
+$yeah-bro-yellow:         #E7B122;
+$radical-red:             #DC401C;
+$grom-grey:               #F4F4F4;
+$tubular-text:            #46484A;
+$light-grey:              #B0B0B0;
+
+
 $sans-serif:              "Lato", sans-serif;
 $icon-font:               "SS Standard";
-$color-default:           #333;
+$color-default:           $tubular-text;
 $container-width:         60em;
-$nav-height:              3.5em;
+$nav-height:              3em;
 $nav-padding:             1em;
 $overlay-opacity:         0.5;
 
@@ -42,7 +54,7 @@ $overlay-opacity:         0.5;
 // Typography
 //
 //////////////////////////////////////////////////
-html, body { background: #FFF; }
+html, body { background: #EEE; }
 
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"],
@@ -71,6 +83,51 @@ ul, ol {
   text-align: left;
 }
 img { display: block; }
+
+
+//////////////////////////////////////////////////
+//
+// Buttons
+//
+//////////////////////////////////////////////////
+.pure-button {
+  border: none;
+  box-shadow: none;
+  &:focus, &:hover, &:active {
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.button-default {
+  position: relative;
+  font-weight: 400;
+  padding: 1em 4em;
+  white-space: normal;
+  strong { font-weight: 700; }
+}
+
+.button-nav,
+#hamburger-icon {
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0 1em;
+  line-height: $nav-height;
+  margin: 0;
+  background: transparent;
+  strong { font-weight: 700; }
+}
+
+#hamburger-icon {
+  position: relative;
+  float: right;
+  top: 6px;
+  display: none;
+  font-family: $icon-font;
+  line-height: $nav-height;
+  font-size: 2em;
+  font-style: normal;
+}
 
 
 //////////////////////////////////////////////////
@@ -108,13 +165,63 @@ img { display: block; }
 
 //////////////////////////////////////////////////
 //
+// Navigation
+//
+//////////////////////////////////////////////////
+#navigation {
+  border: none;
+  padding: 1em 0;
+}
+
+#user-logo {
+  width: auto;
+  height: $nav-height;
+  float: left;
+  max-width: 15em;
+}
+
+#navigation-items {
+  position: relative;
+  float: right;
+}
+
+
+//////////////////////////////////////////////////
+//
 // Media Queries
 //
 //////////////////////////////////////////////////
-@media (min-width: 768px) and (max-width: 1023px) {
-
-}
-
 @media (max-width: 767px) {
 
+  .button-default {
+    padding: 1em;
+    display: block;
+  }
+
+  .button-nav {
+    width: 100%;
+    padding: 1em 0;
+    margin-top: 1em;
+    line-height: normal;
+  }
+
+  #hamburger-icon {
+    display: block;
+    padding: 0;
+    line-height: normal;
+  }
+
+  #navigation-items {
+    width: 100%;
+  }
+}
+
+
+//////////////////////////////////////////////////
+//
+// Utilities
+//
+//////////////////////////////////////////////////
+.hidden {
+  display: none;
 }

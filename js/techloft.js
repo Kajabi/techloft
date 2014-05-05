@@ -1,84 +1,3 @@
-/*////////////////////////////////////////////////
-//
-// Background Resize Plugin
-//
-////////////////////////////////////////////////*/
-(function($) {
-  $.fn.mpResizeBackground = function() {
-
-    var jqDoc = $(document);
-    var docWidth = jqDoc.width();
-    var docHeight = jqDoc.height();
-
-    //this.removeAttr("style");
-    var bgWidth = this.width();
-    var bgHeight = this.height();
-    this.css({
-      width: 0,
-      height: 0,
-      left: 0,
-      top: 0
-    });
-
-    var ratio = bgWidth / bgHeight;
-    var rW = docWidth;
-    var rH = docHeight;
-    if (ratio <= 1) {
-      rH = docWidth / ratio;
-      if (rH < docHeight) {
-        rH = docHeight;
-        rW = rH * ratio;
-      }
-    }
-    else {
-      rW = docHeight * ratio;
-      if (rW < docWidth) {
-        rW = docWidth;
-        rH = rW / ratio;
-      }
-    }
-
-    var destLeft = (docWidth - rW) / 2;
-    var destTop = (docHeight - rH) / 2;
-
-    this.css({
-      width: Math.ceil(rW),
-      height: Math.ceil(rH),
-      left: Math.ceil(destLeft),
-      top: Math.ceil(destTop)
-    });
-
-    return this;
-  };
-})(jQuery);
-
-
-//////////////////////////////////////////////////
-//
-//  Background Animation Plugin
-//
-//////////////////////////////////////////////////
-(function($) {
-  $.fn.mpAnimateBackground = function() {
-    var imgArray, tick, next;
-    imgArray = this;
-    next = imgArray.length - 2;
-    tick = imgArray.length - 1;
-    function animateSlideOut() {
-      imgArray.css("z-index", -1);
-      TweenLite.to(imgArray[next], 0, { css:{ scale: 1.0, opacity: 1 }, ease:Expo.easeInOut });
-      $(imgArray[tick]).css("z-index", 0);
-      TweenLite.to(imgArray[tick], 1, { css:{ scale: 1.2, opacity: 0 }, ease:Expo.easeInOut });
-      next --;
-      tick --;
-      if (next < 0) next = imgArray.length - 1;
-      if (tick < 0) tick = imgArray.length - 1;
-    }
-    setInterval(animateSlideOut, 5000);
-  };
-})(jQuery);
-
-
 //////////////////////////////////////////////////
 //
 //  Navigation Bar Plugin
@@ -94,7 +13,6 @@
       currentDevice;
 
   function init() {
-    console.log("resizeInit");
     jqWindow = $(window);
     jqNavToggle = $("#hamburger-icon");
     jqNavList = $("#navigation-items");
@@ -162,59 +80,6 @@
     else if (w >= mq.mobile && w < mq.tablet) deviceSize = "tablet";
     else deviceSize = "desktop";
     return deviceSize;
-  }
-
-  $(function() { init(); });
-
-})(jQuery);
-
-
-//////////////////////////////////////////////////
-//
-//  Center Element Plugin
-//
-//////////////////////////////////////////////////
-(function($) {
-  $.fn.mpCenterVertically = function(options) {
-    var settings = $.extend({
-      time: 0.35,
-      ease: Back.easeOut
-    }, options);
-    var halfWindow = $(window).height() / 2;
-    var navigationHeight = $("#navigation").innerHeight();
-    return this.each(function() {
-      var halfElement = $(this).innerHeight() / 2;
-      var topValue = "";
-      if (halfElement <= halfWindow - navigationHeight) topValue = halfWindow - halfElement - navigationHeight;
-      TweenLite.to(this, settings.time, { marginTop: topValue, ease: settings.ease });
-    });
-  };
-})(jQuery);
-
-
-//////////////////////////////////////////////////
-//
-//  Main
-//
-//////////////////////////////////////////////////
-(function($) {
-
-  var jqWindow, jqContent;
-  var carouselImages;
-
-  function windowResizeHandler(event) {
-    event.preventDefault();
-    carouselImages.mpResizeBackground();
-    jqContent.mpCenterVertically();
-  }
-
-  function init() {
-    carouselImages = $(".carousel-img");
-    jqContent = $("#content");
-    jqWindow = $(window);
-    jqWindow.resize(windowResizeHandler).trigger("resize");
-    carouselImages.mpAnimateBackground();
-    carouselImages.on("load", windowResizeHandler);
   }
 
   $(function() { init(); });

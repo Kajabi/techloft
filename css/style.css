@@ -9,18 +9,18 @@
 //
 ////////////////////////////////////////////////*/
 html, body {
-  background: #FFF; }
+  background: #EEE; }
 
 html, button, input, select, textarea,
 .pure-g [class*="pure-u"],
 .pure-g-r [class*="pure-u"] {
   font-family: "Lato", sans-serif;
-  color: #333333;
+  color: #46484a;
   line-height: 1.4; }
 
 h1, h2, h3, p, li, a, .pure-button {
   margin: 0;
-  color: #333333;
+  color: #46484a;
   font-weight: 300; }
   h1 strong, h2 strong, h3 strong, p strong, li strong, a strong, .pure-button strong {
     font-weight: 600; }
@@ -54,6 +54,43 @@ ul, ol {
 img {
   display: block; }
 
+.pure-button {
+  border: none;
+  box-shadow: none; }
+  .pure-button:focus, .pure-button:hover, .pure-button:active {
+    border: none;
+    box-shadow: none; }
+
+.button-default {
+  position: relative;
+  font-weight: 400;
+  padding: 1em 4em;
+  white-space: normal; }
+  .button-default strong {
+    font-weight: 700; }
+
+.button-nav,
+#hamburger-icon {
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0 1em;
+  line-height: 3em;
+  margin: 0;
+  background: transparent; }
+  .button-nav strong,
+  #hamburger-icon strong {
+    font-weight: 700; }
+
+#hamburger-icon {
+  position: relative;
+  float: right;
+  top: 6px;
+  display: none;
+  font-family: "SS Standard";
+  line-height: 3em;
+  font-size: 2em;
+  font-style: normal; }
+
 .section {
   position: relative;
   overflow: hidden;
@@ -81,3 +118,38 @@ img {
   zoom: 1; }
   .color-overlay.fixed {
     position: fixed; }
+
+#navigation {
+  border: none;
+  padding: 1em 0; }
+
+#user-logo {
+  width: auto;
+  height: 3em;
+  float: left;
+  max-width: 15em; }
+
+#navigation-items {
+  position: relative;
+  float: right; }
+
+@media (max-width: 767px) {
+  .button-default {
+    padding: 1em;
+    display: block; }
+
+  .button-nav {
+    width: 100%;
+    padding: 1em 0;
+    margin-top: 1em;
+    line-height: normal; }
+
+  #hamburger-icon {
+    display: block;
+    padding: 0;
+    line-height: normal; }
+
+  #navigation-items {
+    width: 100%; } }
+.hidden {
+  display: none; }
