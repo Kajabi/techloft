@@ -39,14 +39,23 @@ $grom-grey:               #F4F4F4;
 $tubular-text:            #46484A;
 $light-grey:              #B0B0B0;
 
-
+// Typography
 $sans-serif:              "Lato", sans-serif;
 $icon-font:               "SS Standard";
 $color-default:           $tubular-text;
+
+// Layout
 $container-width:         60em;
+
+// Navigation
 $nav-height:              3em;
 $nav-padding:             1em;
-$overlay-opacity:         0.5;
+$nav-button-color:        transparent;
+$nav-item-color:          $tubular-text;
+
+// Styling
+$overlay-opacity:         0.8;
+$button-border-radius:    1000px;
 
 
 //////////////////////////////////////////////////
@@ -67,21 +76,22 @@ html, button, input, select, textarea,
 h1, h2, h3, p, li, a, .pure-button {
   margin: 0;
   color: $color-default;
-  font-weight: 300;
-  strong { font-weight: 600; }
+  font-weight: 400;
+  strong { font-weight: 700; }
 }
 
-h1 { font-size: 2.5em; }
-h2 { font-size: 1.875em; }
-h3 { font-size: 1em; font-weight: 400; }
+h1 { font-size: 3.75em; font-weight: 700; color: #FFF; } // 60
+h2 { font-size: 2.25em; } // 36
+h3 { font-size: 1.875em; } // 30
+h4 { font-size: 1.625em; font-weight: 300; } // 26
+p, li { font-size: 1em; } // 16
 p { margin-bottom: 1.5em; }
-p, li, .pure-button { font-size: 1.5em; }
-em { font-style: italic; }
 li { margin-bottom: 0.5em; }
 ul, ol {
   margin-bottom: 2em;
   text-align: left;
 }
+em { font-style: italic; }
 img { display: block; }
 
 
@@ -99,11 +109,16 @@ img { display: block; }
   }
 }
 
-.button-default {
+.default-button {
   position: relative;
   font-weight: 400;
-  padding: 1em 4em;
+  padding: 0.75em 2em;
   white-space: normal;
+  background: $bitchin-blue;
+  border-radius: $button-border-radius;
+  font-size: 1.25em;
+  color: #FFF;
+  text-transform: uppercase;
   strong { font-weight: 700; }
 }
 
@@ -114,8 +129,10 @@ img { display: block; }
   padding: 0 1em;
   line-height: $nav-height;
   margin: 0;
-  background: transparent;
+  color: $nav-item-color;
+  background: $nav-button-color;
   strong { font-weight: 700; }
+  &:focus, &:active, &:hover { background: $nav-button-color; }
 }
 
 #hamburger-icon {
@@ -137,7 +154,6 @@ img { display: block; }
 //////////////////////////////////////////////////
 .section {
   position: relative;
-  overflow: hidden;
   zoom: 1;
   width: 100%;
 }
@@ -157,7 +173,7 @@ img { display: block; }
   height: 100%;
   top: 0;
   left: 0;
-  background: red;
+  background: $dude-dark-blue;
   @include opacity($overlay-opacity);
   &.fixed { position: fixed; }
 }
@@ -170,7 +186,10 @@ img { display: block; }
 //////////////////////////////////////////////////
 #navigation {
   border: none;
-  padding: 1em 0;
+  padding: $nav-padding 0;
+  z-index: 100;
+  overflow: visible;
+  a { color: $nav-item-color; }
 }
 
 #user-logo {
@@ -183,6 +202,29 @@ img { display: block; }
 #navigation-items {
   position: relative;
   float: right;
+}
+
+
+//////////////////////////////////////////////////
+//
+// Jumbotron
+//
+//////////////////////////////////////////////////
+#jumbotron {
+  padding: 3em 0;
+  h1, h4 { color: #FFF; }
+}
+
+
+//////////////////////////////////////////////////
+//
+// Tagline
+//
+//////////////////////////////////////////////////
+#tagline {
+  padding: 2em 0;
+  background: #FFF;
+  h4 { color: $tubular-text; }
 }
 
 

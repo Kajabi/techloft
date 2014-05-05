@@ -21,28 +21,30 @@ html, button, input, select, textarea,
 h1, h2, h3, p, li, a, .pure-button {
   margin: 0;
   color: #46484a;
-  font-weight: 300; }
+  font-weight: 400; }
   h1 strong, h2 strong, h3 strong, p strong, li strong, a strong, .pure-button strong {
-    font-weight: 600; }
+    font-weight: 700; }
 
 h1 {
-  font-size: 2.5em; }
+  font-size: 3.75em;
+  font-weight: 700;
+  color: #FFF; }
 
 h2 {
-  font-size: 1.875em; }
+  font-size: 2.25em; }
 
 h3 {
-  font-size: 1em;
-  font-weight: 400; }
+  font-size: 1.875em; }
+
+h4 {
+  font-size: 1.625em;
+  font-weight: 300; }
+
+p, li {
+  font-size: 1em; }
 
 p {
   margin-bottom: 1.5em; }
-
-p, li, .pure-button {
-  font-size: 1.5em; }
-
-em {
-  font-style: italic; }
 
 li {
   margin-bottom: 0.5em; }
@@ -50,6 +52,9 @@ li {
 ul, ol {
   margin-bottom: 2em;
   text-align: left; }
+
+em {
+  font-style: italic; }
 
 img {
   display: block; }
@@ -61,12 +66,17 @@ img {
     border: none;
     box-shadow: none; }
 
-.button-default {
+.default-button {
   position: relative;
   font-weight: 400;
-  padding: 1em 4em;
-  white-space: normal; }
-  .button-default strong {
+  padding: 0.75em 2em;
+  white-space: normal;
+  background: #1699e3;
+  border-radius: 1000px;
+  font-size: 1.25em;
+  color: #FFF;
+  text-transform: uppercase; }
+  .default-button strong {
     font-weight: 700; }
 
 .button-nav,
@@ -76,10 +86,16 @@ img {
   padding: 0 1em;
   line-height: 3em;
   margin: 0;
+  color: #46484a;
   background: transparent; }
   .button-nav strong,
   #hamburger-icon strong {
     font-weight: 700; }
+  .button-nav:focus, .button-nav:active, .button-nav:hover,
+  #hamburger-icon:focus,
+  #hamburger-icon:active,
+  #hamburger-icon:hover {
+    background: transparent; }
 
 #hamburger-icon {
   position: relative;
@@ -93,7 +109,6 @@ img {
 
 .section {
   position: relative;
-  overflow: hidden;
   zoom: 1;
   width: 100%; }
 
@@ -111,17 +126,21 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-  background: red;
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 50 ")";
-  filter: alpha(opacity=50);
+  background: #2e3840;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
+  filter: alpha(opacity=80);
   zoom: 1; }
   .color-overlay.fixed {
     position: fixed; }
 
 #navigation {
   border: none;
-  padding: 1em 0; }
+  padding: 1em 0;
+  z-index: 100;
+  overflow: visible; }
+  #navigation a {
+    color: #46484a; }
 
 #user-logo {
   width: auto;
@@ -132,6 +151,17 @@ img {
 #navigation-items {
   position: relative;
   float: right; }
+
+#jumbotron {
+  padding: 3em 0; }
+  #jumbotron h1, #jumbotron h4 {
+    color: #FFF; }
+
+#tagline {
+  padding: 2em 0;
+  background: #FFF; }
+  #tagline h4 {
+    color: #46484a; }
 
 @media (max-width: 767px) {
   .button-default {
