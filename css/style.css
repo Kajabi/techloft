@@ -117,20 +117,15 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
-  filter: alpha(opacity=80);
-  zoom: 1; }
-  .color-overlay.fixed {
-    position: fixed; }
-
-#environment .color-overlay,
-#workspace .color-overlay,
-#location .color-overlay {
   opacity: 0.9;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 90 ")";
   filter: alpha(opacity=90);
   zoom: 1; }
+  .color-overlay.fixed {
+    position: fixed; }
+
+.side-by-side {
+  max-height: 25em; }
 
 .section-image {
   position: relative; }
@@ -167,18 +162,33 @@ img {
     filter: alpha(opacity=80);
     zoom: 1; }
 
-#tagline {
-  padding: 2em 0;
-  background: #FFF; }
-  #tagline h4 {
-    color: #46484a; }
-
 #environment {
   background: #7fb22e; }
   #environment p {
     color: #FFF; }
   #environment .color-overlay {
     background: #7fb22e; }
+
+#workspace {
+  background: #e7b122; }
+  #workspace p {
+    color: #FFF; }
+  #workspace .color-overlay {
+    background: #e7b122; }
+
+#location {
+  background: #dc401c; }
+  #location p {
+    color: #FFF; }
+  #location .color-overlay {
+    background: #dc401c; }
+
+#pitch {
+  background: #2e3840; }
+  #pitch p {
+    color: #FFF; }
+  #pitch .color-overlay {
+    background: #2e3840; }
 
 @media (max-width: 767px) {
   .button-default {

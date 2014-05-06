@@ -54,7 +54,7 @@ $nav-button-color:        transparent;
 $nav-item-color:          $tubular-text;
 
 // Styling
-$overlay-opacity:         0.8;
+$overlay-opacity:         0.9;
 $button-border-radius:    1000px;
 
 
@@ -172,16 +172,11 @@ img { display: block; }
   &.fixed { position: fixed; }
 }
 
-#environment,
-#workspace,
-#location {
-  .color-overlay {
-    @include opacity(0.9);
-  }
+.side-by-side {
+  max-height: 25em;
 }
 
 .section-image {
-  //position: absolute;
   position: relative;
 }
 
@@ -233,18 +228,6 @@ img { display: block; }
 
 //////////////////////////////////////////////////
 //
-// Tagline
-//
-//////////////////////////////////////////////////
-#tagline {
-  padding: 2em 0;
-  background: #FFF;
-  h4 { color: $tubular-text; }
-}
-
-
-//////////////////////////////////////////////////
-//
 // Environment
 //
 //////////////////////////////////////////////////
@@ -253,6 +236,48 @@ img { display: block; }
   p { color: #FFF; }
   .color-overlay {
     background: $gnarly-green;
+  }
+}
+
+
+//////////////////////////////////////////////////
+//
+// Workspace
+//
+//////////////////////////////////////////////////
+#workspace {
+  background: $yeah-bro-yellow;
+  p { color: #FFF; }
+  .color-overlay {
+    background: $yeah-bro-yellow;
+  }
+}
+
+
+//////////////////////////////////////////////////
+//
+// Location
+//
+//////////////////////////////////////////////////
+#location {
+  background: $radical-red;
+  p { color: #FFF; }
+  .color-overlay {
+    background: $radical-red;
+  }
+}
+
+
+//////////////////////////////////////////////////
+//
+// Pitch
+//
+//////////////////////////////////////////////////
+#pitch {
+  background: $dude-dark-blue;
+  p { color: #FFF; }
+  .color-overlay {
+    background: $dude-dark-blue;
   }
 }
 
