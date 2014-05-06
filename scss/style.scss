@@ -45,7 +45,7 @@ $icon-font:               "SS Standard";
 $color-default:           $tubular-text;
 
 // Layout
-$container-width:         60em;
+$container-width:         90em;
 
 // Navigation
 $nav-height:              3em;
@@ -71,6 +71,7 @@ html, button, input, select, textarea,
   font-family: $sans-serif;
   color: $color-default;
   line-height: 1.4;
+  position: relative;
 }
 
 h1, h2, h3, p, li, a, .pure-button {
@@ -85,12 +86,6 @@ h2 { font-size: 2.25em; } // 36
 h3 { font-size: 1.875em; } // 30
 h4 { font-size: 1.625em; font-weight: 300; } // 26
 p, li { font-size: 1em; } // 16
-p { margin-bottom: 1.5em; }
-li { margin-bottom: 0.5em; }
-ul, ol {
-  margin-bottom: 2em;
-  text-align: left;
-}
 em { font-style: italic; }
 img { display: block; }
 
@@ -173,9 +168,25 @@ img { display: block; }
   height: 100%;
   top: 0;
   left: 0;
-  background: $dude-dark-blue;
   @include opacity($overlay-opacity);
   &.fixed { position: fixed; }
+}
+
+#environment,
+#workspace,
+#location {
+  .color-overlay {
+    @include opacity(0.9);
+  }
+}
+
+.section-image {
+  //position: absolute;
+  position: relative;
+}
+
+.section-text {
+  position: relative;
 }
 
 
@@ -213,6 +224,10 @@ img { display: block; }
 #jumbotron {
   padding: 3em 0;
   h1, h4 { color: #FFF; }
+  .color-overlay {
+    background: $dude-dark-blue;
+    @include opacity(0.8);
+  }
 }
 
 
@@ -225,6 +240,20 @@ img { display: block; }
   padding: 2em 0;
   background: #FFF;
   h4 { color: $tubular-text; }
+}
+
+
+//////////////////////////////////////////////////
+//
+// Environment
+//
+//////////////////////////////////////////////////
+#environment {
+  background: $gnarly-green;
+  p { color: #FFF; }
+  .color-overlay {
+    background: $gnarly-green;
+  }
 }
 
 

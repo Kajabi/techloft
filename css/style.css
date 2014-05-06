@@ -16,7 +16,8 @@ html, button, input, select, textarea,
 .pure-g-r [class*="pure-u"] {
   font-family: "Lato", sans-serif;
   color: #46484a;
-  line-height: 1.4; }
+  line-height: 1.4;
+  position: relative; }
 
 h1, h2, h3, p, li, a, .pure-button {
   margin: 0;
@@ -42,16 +43,6 @@ h4 {
 
 p, li {
   font-size: 1em; }
-
-p {
-  margin-bottom: 1.5em; }
-
-li {
-  margin-bottom: 0.5em; }
-
-ul, ol {
-  margin-bottom: 2em;
-  text-align: left; }
 
 em {
   font-style: italic; }
@@ -117,7 +108,7 @@ img {
   overflow: hidden;
   margin: 0 auto;
   padding: 0 1em;
-  max-width: 60em;
+  max-width: 90em;
   text-align: center; }
 
 .color-overlay {
@@ -126,13 +117,26 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-  background: #2e3840;
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
   filter: alpha(opacity=80);
   zoom: 1; }
   .color-overlay.fixed {
     position: fixed; }
+
+#environment .color-overlay,
+#workspace .color-overlay,
+#location .color-overlay {
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 90 ")";
+  filter: alpha(opacity=90);
+  zoom: 1; }
+
+.section-image {
+  position: relative; }
+
+.section-text {
+  position: relative; }
 
 #navigation {
   border: none;
@@ -156,12 +160,25 @@ img {
   padding: 3em 0; }
   #jumbotron h1, #jumbotron h4 {
     color: #FFF; }
+  #jumbotron .color-overlay {
+    background: #2e3840;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
+    filter: alpha(opacity=80);
+    zoom: 1; }
 
 #tagline {
   padding: 2em 0;
   background: #FFF; }
   #tagline h4 {
     color: #46484a; }
+
+#environment {
+  background: #7fb22e; }
+  #environment p {
+    color: #FFF; }
+  #environment .color-overlay {
+    background: #7fb22e; }
 
 @media (max-width: 767px) {
   .button-default {
