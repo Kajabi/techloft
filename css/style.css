@@ -121,11 +121,19 @@ img {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 90 ")";
   filter: alpha(opacity=90);
   zoom: 1; }
-  .color-overlay.fixed {
-    position: fixed; }
 
 .side-by-side {
-  max-height: 25em; }
+  height: 31.25em; }
+
+.side-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .section-image {
   position: relative; }
@@ -168,6 +176,10 @@ img {
     color: #FFF; }
   #environment .color-overlay {
     background: #7fb22e; }
+  #environment .uncovered-image .side-image {
+    background-image: url("../img/ping_pong.jpg"); }
+  #environment .covered-image .side-image {
+    background-image: url("../img/controller.jpg"); }
 
 #workspace {
   background: #e7b122; }
@@ -175,6 +187,10 @@ img {
     color: #FFF; }
   #workspace .color-overlay {
     background: #e7b122; }
+  #workspace .uncovered-image .side-image {
+    background-image: url("../img/workspace.jpg"); }
+  #workspace .covered-image .side-image {
+    background-image: url("../img/workspace_zoom.jpg"); }
 
 #location {
   background: #dc401c; }
@@ -182,6 +198,10 @@ img {
     color: #FFF; }
   #location .color-overlay {
     background: #dc401c; }
+  #location .uncovered-image .side-image {
+    background-image: url("../img/controller.jpg"); }
+  #location .covered-image .side-image {
+    background-image: url("../img/controller.jpg"); }
 
 #pitch {
   background: #2e3840; }
@@ -189,8 +209,18 @@ img {
     color: #FFF; }
   #pitch .color-overlay {
     background: #2e3840; }
+  #pitch .uncovered-image .side-image {
+    background-image: url("../img/controller.jpg"); }
+  #pitch .covered-image .side-image {
+    background-image: url("../img/controller.jpg"); }
 
 @media (max-width: 767px) {
+  h1 {
+    font-size: 2.25em; }
+
+  h4 {
+    font-size: 1.25em; }
+
   .button-default {
     padding: 1em;
     display: block; }

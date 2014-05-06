@@ -22,6 +22,14 @@
   zoom: 1;
 }
 
+@mixin full-size {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
 
 /*////////////////////////////////////////////////
 //
@@ -163,17 +171,19 @@ img { display: block; }
 }
 
 .color-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  @include full-size;
   @include opacity($overlay-opacity);
-  &.fixed { position: fixed; }
 }
 
 .side-by-side {
-  max-height: 25em;
+  height: 31.25em;
+}
+
+.side-image {
+  @include full-size;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .section-image {
@@ -234,9 +244,9 @@ img { display: block; }
 #environment {
   background: $gnarly-green;
   p { color: #FFF; }
-  .color-overlay {
-    background: $gnarly-green;
-  }
+  .color-overlay { background: $gnarly-green; }
+  .uncovered-image .side-image { background-image: url("../img/ping_pong.jpg"); }
+  .covered-image .side-image { background-image: url("../img/controller.jpg"); }
 }
 
 
@@ -248,9 +258,9 @@ img { display: block; }
 #workspace {
   background: $yeah-bro-yellow;
   p { color: #FFF; }
-  .color-overlay {
-    background: $yeah-bro-yellow;
-  }
+  .color-overlay { background: $yeah-bro-yellow; }
+  .uncovered-image .side-image { background-image: url("../img/workspace.jpg"); }
+  .covered-image .side-image { background-image: url("../img/workspace_zoom.jpg"); }
 }
 
 
@@ -262,9 +272,9 @@ img { display: block; }
 #location {
   background: $radical-red;
   p { color: #FFF; }
-  .color-overlay {
-    background: $radical-red;
-  }
+  .color-overlay { background: $radical-red; }
+  .uncovered-image .side-image { background-image: url("../img/controller.jpg"); }
+  .covered-image .side-image { background-image: url("../img/controller.jpg"); }
 }
 
 
@@ -276,9 +286,9 @@ img { display: block; }
 #pitch {
   background: $dude-dark-blue;
   p { color: #FFF; }
-  .color-overlay {
-    background: $dude-dark-blue;
-  }
+  .color-overlay { background: $dude-dark-blue; }
+  .uncovered-image .side-image { background-image: url("../img/controller.jpg"); }
+  .covered-image .side-image { background-image: url("../img/controller.jpg"); }
 }
 
 
@@ -288,6 +298,9 @@ img { display: block; }
 //
 //////////////////////////////////////////////////
 @media (max-width: 767px) {
+
+  h1 { font-size: 2.25em; }
+  h4 { font-size: 1.25em; }
 
   .button-default {
     padding: 1em;
@@ -309,6 +322,14 @@ img { display: block; }
 
   #navigation-items {
     width: 100%;
+  }
+
+  .side-by-side {
+    //height: 40em;
+  }
+
+  .uncovered-image {
+    //display: none;
   }
 }
 
