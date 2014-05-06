@@ -29,7 +29,8 @@ h1, h2, h3, p, li, a, .pure-button {
 h1 {
   font-size: 3.75em;
   font-weight: 700;
-  color: #FFF; }
+  color: #FFF;
+  text-transform: uppercase; }
 
 h2 {
   font-size: 2.25em; }
@@ -205,7 +206,7 @@ img {
   #location .color-overlay {
     background: #dc401c; }
   #location .uncovered-image .side-image {
-    background-image: url("../img/controller.jpg"); }
+    background-image: url("../img/map.png"); }
   #location .covered-image .side-image {
     background-image: url("../img/spectrum.jpg"); }
 
@@ -218,7 +219,13 @@ img {
   #pitch .uncovered-image .side-image {
     background-image: url("../img/glasses.jpg"); }
   #pitch .covered-image .side-image {
-    background-image: url("../img/controller.jpg"); }
+    background-image: url("../img/pitch.jpg"); }
+
+#optin {
+  background: #FFF;
+  padding: 10em 0; }
+  #optin h1 {
+    color: #46484a; }
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .side-by-side {

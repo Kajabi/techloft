@@ -89,7 +89,7 @@ h1, h2, h3, p, li, a, .pure-button {
   strong { font-weight: 700; }
 }
 
-h1 { font-size: 3.75em; font-weight: 700; color: #FFF; } // 60
+h1 { font-size: 3.75em; font-weight: 700; color: #FFF; text-transform: uppercase; } // 60
 h2 { font-size: 2.25em; } // 36
 h3 { font-size: 1.875em; } // 30
 h4 { font-size: 1.625em; font-weight: 300; } // 26
@@ -279,7 +279,7 @@ img { display: block; }
   background: $radical-red;
   p { color: #FFF; }
   .color-overlay { background: $radical-red; }
-  .uncovered-image .side-image { background-image: url("../img/controller.jpg"); }
+  .uncovered-image .side-image { background-image: url("../img/map.png"); }
   .covered-image .side-image { background-image: url("../img/spectrum.jpg"); }
 }
 
@@ -294,7 +294,19 @@ img { display: block; }
   p { color: #FFF; }
   .color-overlay { background: $dude-dark-blue; }
   .uncovered-image .side-image { background-image: url("../img/glasses.jpg"); }
-  .covered-image .side-image { background-image: url("../img/controller.jpg"); }
+  .covered-image .side-image { background-image: url("../img/pitch.jpg"); }
+}
+
+
+//////////////////////////////////////////////////
+//
+// Optin
+//
+//////////////////////////////////////////////////
+#optin {
+  background: #FFF;
+  h1 { color: $tubular-text; }
+  padding: 10em 0;
 }
 
 
