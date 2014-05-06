@@ -125,6 +125,15 @@ img {
 .side-by-side {
   height: 31.25em; }
 
+.side-text {
+  position: relative; }
+
+.image-container {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100%; }
+
 .side-image {
   position: absolute;
   width: 100%;
@@ -134,12 +143,6 @@ img {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover; }
-
-.section-image {
-  position: relative; }
-
-.section-text {
-  position: relative; }
 
 #navigation {
   border: none;
@@ -160,7 +163,10 @@ img {
   float: right; }
 
 #jumbotron {
-  padding: 3em 0; }
+  padding: 17.5em 0;
+  background-image: url("../img/header.jpg");
+  background-size: cover;
+  background-position: center center; }
   #jumbotron h1, #jumbotron h4 {
     color: #FFF; }
   #jumbotron .color-overlay {
@@ -201,7 +207,7 @@ img {
   #location .uncovered-image .side-image {
     background-image: url("../img/controller.jpg"); }
   #location .covered-image .side-image {
-    background-image: url("../img/controller.jpg"); }
+    background-image: url("../img/spectrum.jpg"); }
 
 #pitch {
   background: #2e3840; }
@@ -210,16 +216,33 @@ img {
   #pitch .color-overlay {
     background: #2e3840; }
   #pitch .uncovered-image .side-image {
-    background-image: url("../img/controller.jpg"); }
+    background-image: url("../img/glasses.jpg"); }
   #pitch .covered-image .side-image {
     background-image: url("../img/controller.jpg"); }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+  .side-by-side {
+    height: 20em; } }
 @media (max-width: 767px) {
   h1 {
     font-size: 2.25em; }
 
   h4 {
     font-size: 1.25em; }
+
+  .image-container {
+    width: 100%;
+    height: 50%; }
+
+  .covered-image {
+    top: 0;
+    position: absolute; }
+
+  .uncovered-image {
+    top: 50%; }
+
+  #jumbotron {
+    padding: 6em 0; }
 
   .button-default {
     padding: 1em;
@@ -237,6 +260,9 @@ img {
     line-height: normal; }
 
   #navigation-items {
-    width: 100%; } }
+    width: 100%; }
+
+  .side-by-side {
+    height: 40em; } }
 .hidden {
   display: none; }
