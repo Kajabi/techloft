@@ -54,7 +54,7 @@ $color-default:           $tubular-text;
 
 // Layout
 $container-width:         64em;
-$text-container-width:    40em;
+$text-container-width:    48em;
 
 
 // Navigation
@@ -357,19 +357,32 @@ img { display: block; }
 //////////////////////////////////////////////////
 #optin {
   background: #FFF;
-  h2 { color: $tubular-text; }
+  h2 { color: $tubular-text; margin-bottom: 1em; }
   padding: 6em 0;
   form {
     text-align: center;
+    margin: 3em auto 0 auto;
+    max-width: 20em;
   }
   input {
-    margin: 1em auto;
     display: block;
-    width: 18em;
-    padding: 1em;
+    width: 90%;
+    padding: 0.75em 5%;
+    margin-bottom: 1.25em;
     border-radius: $button-border-radius;
-    border: 2px solid #EEE;
+    border: 0;
+    box-shadow: 0 0 0 2px #EEE;
   }
+}
+
+
+//////////////////////////////////////////////////
+//
+// Footer
+//
+//////////////////////////////////////////////////
+#footer {
+  background: #EEE;
 }
 
 
