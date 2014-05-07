@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic">
     <link rel="stylesheet" href="webfonts/ss-standard.css">
-    <link rel="stylesheet" href="css/pure-custom-min.css">
+    <link rel="stylesheet" href="css/pure-min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -24,13 +24,15 @@
         </div>
       </div>
     </div>
-
     <div class="section" id="jumbotron">
       <div class="color-overlay"></div>
       <div class="container">
         <h1>Workspace for creatives</h1>
-        <h4>Sub headline that gets right to the core of what we offer and makes it clear to the reader what we do</h4>
-        <a class="pure-button default-button">Learn More</a>
+        <div class="section-text-container">
+          <h4>Sub headline that gets right to the core of what we offer and makes it clear to the reader what we do</h4>
+        </div>
+        <a class="pure-button default-button" id="learn-more-button">Learn More</a>
+        </div>
       </div>
     </div>
     <div class="section" id="environment">
@@ -105,7 +107,13 @@
     </div>
     <div class="section" id="optin">
       <div class="container">
-        <h1>This is the optin</h1>
+        <h2>Enter your info below to request an application</h2>
+        <p>Please note that not everyone who applies will be accepted. We are curating the culture and want to make sure this remains a place full of quality people who share common interests and passions.</p>
+        <form>
+          <input placeholder="Name" />
+          <input placeholder="Email" />
+          <button class="pure-button default-button">Apply Now</button>
+        </form>
       </div>
     </div>
     <div class="section" id="footer">

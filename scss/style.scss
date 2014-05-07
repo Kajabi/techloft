@@ -30,14 +30,6 @@
   left: 0;
 }
 
-@mixin vertical-align {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
 
 /*////////////////////////////////////////////////
 //
@@ -61,7 +53,9 @@ $icon-font:               "SS Standard";
 $color-default:           $tubular-text;
 
 // Layout
-$container-width:         90em;
+$container-width:         64em;
+$text-container-width:    40em;
+
 
 // Navigation
 $nav-height:              3em;
@@ -190,6 +184,8 @@ img { display: block; }
   font-style: normal;
 }
 
+#learn-more-button { margin-top: 2em; }
+
 
 //////////////////////////////////////////////////
 //
@@ -211,6 +207,11 @@ img { display: block; }
   text-align: center;
 }
 
+.section-text-container {
+  max-width: $text-container-width;
+  margin: 0 auto;
+}
+
 .color-overlay {
   @include full-size;
   @include opacity($overlay-opacity);
@@ -225,7 +226,6 @@ img { display: block; }
   height: 100%;
   padding: 0 2em;
   position: relative;
-  //background: rgba(0,0,0,0.1);
   margin: 0 auto;
   display: table;
 }
@@ -233,7 +233,6 @@ img { display: block; }
 .text-vertical-container {
   display: table-cell;
   vertical-align: middle;
-  //background: rgba(0,0,0,0.1);
 }
 
 .image-container {
@@ -283,7 +282,7 @@ img { display: block; }
 //
 //////////////////////////////////////////////////
 #jumbotron {
-  padding: 17.5em 0;
+  padding: 12.5em 0;
   h1, h4 { color: #FFF; }
   .color-overlay {
     background: $dude-dark-blue;
@@ -358,8 +357,19 @@ img { display: block; }
 //////////////////////////////////////////////////
 #optin {
   background: #FFF;
-  h1 { color: $tubular-text; }
-  padding: 10em 0;
+  h2 { color: $tubular-text; }
+  padding: 6em 0;
+  form {
+    text-align: center;
+  }
+  input {
+    margin: 1em auto;
+    display: block;
+    width: 18em;
+    padding: 1em;
+    border-radius: $button-border-radius;
+    border: 2px solid #EEE;
+  }
 }
 
 
@@ -385,6 +395,8 @@ img { display: block; }
   .text-horizontal-container { padding: 0 1em; }
   .faux-hr { margin: 1em 0; }
   p { font-size: 1em; line-height: 1.4; }
+
+  #learn-more-button { margin-top: 1em; }
 
   .image-container {
     width: 100%;
