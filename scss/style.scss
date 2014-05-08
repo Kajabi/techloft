@@ -59,8 +59,6 @@ $text-container-width:    48em;
 // Navigation
 $nav-height:              3em;
 $nav-padding:             1em;
-$nav-button-color:        transparent;
-$nav-item-color:          $tubular-text;
 
 // Footer
 $footer-height:           3em;
@@ -132,6 +130,8 @@ p, li {
 em { font-style: italic; }
 img { display: block; }
 
+textarea, input { outline: none; }
+
 .faux-hr {
   width: 30%;
   height: 1px;
@@ -167,41 +167,17 @@ img { display: block; }
   strong { font-weight: 700; }
 }
 
-.button-nav,
-.button-footer,
-#hamburger-icon {
+.button-footer {
   font-size: 1em;
   font-weight: 400;
   padding: 0 1em;
   margin: 0;
-  color: $nav-item-color;
-  strong { font-weight: 700; }
-}
-
-.button-nav {
-  line-height: $nav-height;
-  background: $nav-button-color;
-  &:focus, &:active, &:hover { background: $nav-button-color; }
-}
-
-.button-footer {
+  color: $footer-item-color;
   line-height: $footer-height;
   background: $footer-button-color;
   &:focus, &:active, &:hover { background: $footer-button-color; }
+  strong { font-weight: 700; }
 }
-
-#hamburger-icon {
-  position: relative;
-  float: right;
-  top: 6px;
-  display: none;
-  font-family: $icon-font;
-  line-height: $nav-height;
-  font-size: 2em;
-  font-style: normal;
-}
-
-#learn-more-button { margin-top: 2em; }
 
 
 //////////////////////////////////////////////////
@@ -269,32 +245,6 @@ img { display: block; }
 
 //////////////////////////////////////////////////
 //
-// Navigation
-//
-//////////////////////////////////////////////////
-#navigation {
-  border: none;
-  padding: $nav-padding 0;
-  z-index: 100;
-  overflow: visible;
-  a { color: $nav-item-color; }
-}
-
-#user-logo {
-  width: auto;
-  height: $nav-height;
-  float: left;
-  max-width: 15em;
-}
-
-#navigation-items {
-  position: relative;
-  float: right;
-}
-
-
-//////////////////////////////////////////////////
-//
 // Jumbotron
 //
 //////////////////////////////////////////////////
@@ -308,6 +258,10 @@ img { display: block; }
   background-image: url("../img/header.jpg");
   background-size: cover;
   background-position: center center;
+
+  #apply-now {
+    margin: 2em 0 0 0;
+  }
 }
 
 
@@ -374,8 +328,8 @@ img { display: block; }
 //////////////////////////////////////////////////
 #optin {
   background: #FFF;
-  h2 { color: $tubular-text; margin-bottom: 1em; }
   padding: 6em 0;
+  h2 { color: $tubular-text; margin-bottom: 1em; }
   form {
     text-align: center;
     margin: 3em auto 0 auto;
@@ -390,9 +344,7 @@ img { display: block; }
     border: 0;
     box-shadow: inset 0 0 0 2px #EEE;
   }
-  button {
-    width: 100%;
-  }
+  button { width: 100%; }
 }
 
 
@@ -456,28 +408,15 @@ img { display: block; }
 
   #jumbotron {
     padding: 6em 0;
+
+    #apply-now {
+      margin: 1em 0 0 0;
+    }
   }
 
   .button-default {
     padding: 1em;
     display: block;
-  }
-
-  .button-nav {
-    width: 100%;
-    padding: 1em 0;
-    margin-top: 1em;
-    line-height: normal;
-  }
-
-  #hamburger-icon {
-    display: block;
-    padding: 0;
-    line-height: normal;
-  }
-
-  #navigation-items {
-    width: 100%;
   }
 
   .side-by-side {
@@ -498,14 +437,4 @@ img { display: block; }
       max-width: 100%;
     }
   }
-}
-
-
-//////////////////////////////////////////////////
-//
-// Utilities
-//
-//////////////////////////////////////////////////
-.hidden {
-  display: none;
 }
